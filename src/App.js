@@ -3,7 +3,7 @@ import { useState } from "react"
 import React from 'react'
 const keys ={
   key:"d18e8f593babe6bd791a0aec30b87eb1",
-  base:"http://api.openweathermap.org/data/2.5/"
+  base:"https://api.openweathermap.org/data/2.5/"
 }
 function App() {
   const [call,setcall] = useState('');
