@@ -8,8 +8,8 @@ const keys ={
 function App() {
   const [call,setcall] = useState('');
   const [weather,nweather] = useState({});
-  const search = e =>{
-    if(e.key=="Enter"){
+  const search = s =>{
+    if(s.key=="Enter"){
       fetch(`${keys.base}weather?q=${call}&units=metric&APPID=${keys.key}`)
       .then(res =>res.json())
       .then(result =>{
@@ -36,7 +36,7 @@ function App() {
       "App"}>
      <main>
       <div className="search">
-        <input type="text" className="searchbox" placeholder='Type Your City Name' onChange={e=>setcall(e.target.value)}
+        <input type="text" className="searchbox" placeholder='Type Your City Name' onChange={s=>setcall(s.target.value)}
         value={call}
         onKeyPress={search}/>
       </div>
