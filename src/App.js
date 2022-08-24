@@ -8,13 +8,16 @@ const keys ={
 function App() {
   const [call,setcall] = useState('');
   const [weather,nweather] = useState({});
+  const [link,setlink] = useState('videos/Sunny.mp4')
   const search = s =>{
     if(s.key=="Enter"){
       fetch(`${keys.base}weather?q=${call}&units=metric&APPID=${keys.key}`)
       .then(res =>res.json())
       .then(result =>{
        nweather(result);
-       console.log(result);
+       setlink(`videos/${weather.weather[0].main}.mp4`);
+       console.log(link)
+      //  console.log(result);
        setcall('');
     });
   }
@@ -28,17 +31,17 @@ function App() {
     let year = e.getFullYear();
     return `${day} ${date} ${month} ${year}`
   }
+  // var link = `videos\+${weather.weather[0].main}+.mp4`
+  // console.log(link);
   return (
-    <div className={
-      (typeof weather.main!= "undefined")?
-      ((weather.main.temp>20)
-      ?'App':'App-cold'):
-      "App"}>
+    <div className="App">
      <main>
+     {/* <video src ={link} autoPlay loop muted></video> */}
       <div className="search">
         <input type="text" className="searchbox" placeholder='Type Your City Name' onChange={s=>setcall(s.target.value)}
         value={call}
         onKeyPress={search}/>
+        <video src ={link} autoPlay loop muted></video>
       </div>
       {(typeof weather.main !="undefined")?(
         <div>
@@ -47,7 +50,7 @@ function App() {
         <div className="date">{dates(new Date())}</div>
       </div>
       <div className = "weather-b">
-        <div className='temperature'>{Math.round(weather.main.temp)} ° C</div>
+        <div className='temperature'>{Math.round(weather.main.temp)}° C</div>
         <div className='weather'>{weather.weather[0].main}</div>
       </div>
       </div>
