@@ -107,9 +107,39 @@ main{
         text-shadow: 3px 3px rgba(50,50,70,0.75);
       }
     }
-    .Footer{
-        display: flex;
-        background-color:grey;
-        align-items: center;
-        justify-content: center;
-    }
+    // .Footer{
+    //     background-color:grey;
+    //     display: grid;
+    //     place-items: center;
+    //     .ficons{
+    //      display: flex;
+    //      justify-content: space-between;
+    //      color:red;
+    //     }
+    // }
+    #foot{
+        background-color: #B958A5;
+        text-align: center;
+        padding-top: 2px;
+        font-size: 1.0rem;
+        margin: 0;
+      }
+      #Footer{
+        // background:url('./photos/spring.jpg');
+        background-color: lightblue;
+        // background: transparent;
+        color: black;
+        text-align: center;
+        padding: 10px 0 10px 0;
+      }
+      .ending{
+        color:black;
+        margin-top: 0.5rem;
+      }
+      .social-icon{
+        margin-right: 20px;
+        color:black;
+      }
+      .social-icon:hover{
+        color:darkblue;
+      }
